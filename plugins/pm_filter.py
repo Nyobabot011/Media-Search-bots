@@ -11,7 +11,7 @@ BOT = {}
 
 RATING = ["N-nih, anime", "Sepertinya a-aku kebetulan menemukan anime", "A-apa boleh buat, nih kebetulan aku punya anime", "Ke-kebetulan aku lagi gk ada kerjaan, yaudah nih anime", ]
 
-GENRES = ["“Ba-baka, Aku tidak melakukannya untuk kamu ya! Aku melakukannya karena aku mau aja! >///<”,
+GENRES = ["Ba-baka, Aku tidak melakukannya untuk kamu ya! Aku melakukannya karena aku mau aja! >///<",
          "I-idot, k-kamu kegeeran aja, aku cu-cuma kasian sama kamu ya >///<", "Bu-bukannya aku melakukan ini demi kamu ya, a-aku cuma lagi sengang saja >///<",
          "A-apaan sih baka, a-aku tidak sedang mencoba untuk membuatmu terkesan ya >///<",
          "Ba-baka, aku tidak mencarikan ini karena kamu mau ya, ke-kebetulan aku juga mau menontonnya >///<",
