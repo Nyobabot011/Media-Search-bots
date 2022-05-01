@@ -92,7 +92,7 @@ async def start(bot, cmd):
         )
     else:
         await cmd.reply_text(
-            START_MSG,
+            START_MSG.format(message.from_user.mention),
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -107,7 +107,6 @@ async def start(bot, cmd):
                 ]       
             )
             )
-            message.reply(START_MSG.format(message.from_user.mention), reply_markup=reply_markup)
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
