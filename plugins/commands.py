@@ -104,10 +104,10 @@ async def start(bot, cmd):
             InlineKeyboardButton("❓ Tutorial", callback_data="about"),
             InlineKeyboardButton("🗣 Channel", url='https://t.me/gawrproject'),
             ]
-                ]
+                ]       
             )
-        )
-
+            )
+            message.reply(START_MSG.format(message.from_user.mention), reply_markup=reply_markup)
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
 async def channel_info(bot, message):
