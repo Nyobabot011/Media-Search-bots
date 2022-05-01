@@ -9,14 +9,14 @@ from utils import get_filter_results, get_file_details, is_subscribed, get_poste
 BUTTONS = {}
 BOT = {}
 
-RATING = ["5.1 | IMDB", "6.2 | IMDB", "7.3 | IMDB", "8.4 | IMDB", "9.5 | IMDB", ]
-GENRES = ["fun, fact",
-         "Thriller, Comedy",
-         "Drama, Comedy",
-         "Family, Drama",
-         "Action, Adventure",
-         "Film Noir",
-         "Documentary"]
+RATING = ["N-nih, anime", "Sepertinya a-aku kebetulan menemukan anime", "A-apa boleh buat, nih kebetulan aku punya anime", "Ke-kebetulan aku lagi gk ada kerjaan, yaudah nih anime", ]
+
+GENRES = ["“Ba-baka, Aku tidak melakukannya untuk kamu ya! Aku melakukannya karena aku mau aja! >///<”,
+         "I-idot, k-kamu kegeeran aja, aku cu-cuma kasian sama kamu ya >///<", "Bu-bukannya aku melakukan ini demi kamu ya, a-aku cuma lagi sengang saja >///<",
+         "A-apaan sih baka, a-aku tidak sedang mencoba untuk membuatmu terkesan ya >///<",
+         "Ba-baka, aku tidak mencarikan ini karena kamu mau ya, ke-kebetulan aku juga mau menontonnya >///<",
+         "A-aku tidak bermaksud untuk membuatmu terkesan ya >///<",
+         "A-aku mencarikannya karena aku lagi senggang saja, baka >///<",]
 
 @Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
@@ -65,7 +65,7 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                filename = f"{file.file_name} [{get_size(file.file_size)}]"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"subinps#{file_id}")]
                     )
@@ -123,7 +123,7 @@ async def group(client, message):
         btn = []
 
         search = message.text
-        result_txt = f"**🎬 Title:** {search}\n**🌟 Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**©️ {message.chat.title} 🍿**"
+        result_txt = f"{random.choice(RATING)} {search}. {random.choice(GENRES)}"
 
         nyva=BOT.get("username")
         if not nyva:
@@ -134,7 +134,7 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename = f"🎬 [{get_size(file.file_size)}] 🎥 {file.file_name}"
+                filename = f"🎥 {file.file_name} 🎬 [{get_size(file.file_size)}]"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=subinps_-_-_-_{file_id}")]
                 )
